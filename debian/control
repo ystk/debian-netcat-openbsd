@@ -1,15 +1,17 @@
 Source: netcat-openbsd
 Section: net
-Priority: optional
-Maintainer: Decklin Foster <decklin@red-bean.com>
-Standards-Version: 3.7.3
-Build-Depends: quilt, debhelper (>= 4.0.0), libglib2.0-dev
+Priority: important
+Maintainer: Aron Xu <aron@debian.org>
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 8), quilt, libbsd-dev, pkg-config
+Vcs-Browser: http://git.debian.org/?p=collab-maint/netcat-openbsd.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/netcat-openbsd.git
 
 Package: netcat-openbsd
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Provides: netcat
-Conflicts: netcat (<< 1.10-35)
+Breaks: netcat (<< 1.10-35)
 Replaces: netcat (<< 1.10-35)
 Description: TCP/IP swiss army knife
  A simple Unix utility which reads and writes data across network
